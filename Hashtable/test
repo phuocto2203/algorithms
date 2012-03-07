@@ -1,0 +1,2 @@
+#!/usr/bin/sh
+./bin/hashtable docs/hw4-sampleinput.txt
