@@ -1,0 +1,43 @@
+Hashtable program
+Ramsey Kant
+
+Targets: all, clean
+
+ASU CSE310 Hashtable Assignment Specifications:
+
+In all of the procedures below, assume that the keys to be stored in your hash table (by chaining in the former item, or by open addressing in the latter item) are natural numbers in the range [0; 100].
+
+Chained-Hash-Insert and Chained-Hash-Search, using the hash function h(k) = k mod p, and chaining for resolving con icts on a hash table of size p.
+
+Hash-Search-Linear and Hash-Insert-Linear, using open ad-
+
+dressing for resolving con icts on a hash table of size p, and linear prob- ing with h0(k) = bp(( k) mod 1)c where is a real number. (there- fore the probe sequence will be de ned by h(k; i) = (h0(k) + i) mod p, for all 0 i < p).
+
+Hash-Search-Double and Hash-Insert-Double, using open ad- dressing for resolving con icts on a hash table of size p, and dou-
+
+ble hashing with h1(k) = k mod p and h2(k) = 1 + (k mod (p 2)) (the probe sequence will then be de ned by h(k; i) = (h1(k) + i h2(k)) mod p, for all 0 i < p).
+
+In each of the items below, you will insert the sequence of keys in the order that they appear in the input le into an initially empty hash table and store it in a separate output le.
+
+1.Chained-Hash-Insert. Print out the linked lists headed by each slot of the table (one linked list per line, with space between consecutive elements of the list), in increasing order of the indices of the slots, right after you have nished inserting the sequence of keys. Indicate at the beginning of each list to which slot it corresponds to. Now search for the key k1 (read from the input le) in your table and print out the index of the slot that heads the linked list where this key was found.
+
+2.Hash-Insert-Linear. Print out the contents of each slot in your hash table in increasing order of the indices of the slots, right after you havenished inserting the sequence of keys. Now search for the key k1 (read from the input le) in your table and print out the sequence of slots probed in the search until you nd this key.
+
+3.Hash-Insert-Double. Print out the contents of each slot in your hash table in increasing order of the indices of the slots, right after you have nished inserting the sequence of keys. Now search for key k1 (read from the input le) in your table and print out the sequence of slots probed in the search until you nd this key.
+
+
+Format of the Input File: This le will be given as a parameter to the program. There will be a single value in each line of the input le. Therst line will contain the value for p and the second line will contain the value for (the real number used in linear hashing). The next line will be the number of keys that need to be inserted into the hash table which we will call n. The subsequent n lines will contain the actual keys. Finally the last line will contain the value for k1 which is the key that your program should be searching for after it has inserted all of the n elements into the hash table.
+
+Format of the Output Files:
+
+Chained Hash: The rst p lines of this output le will represent the p slots of the hash table. In the beginning of each line will be the index of that slot (0 through p 1) followed by a \:". Then for each slot, output the elements according to the order they are inserted. (New element will be inserted at the head of the link-list.)
+
+Next, output which slot the key k1 is located at.
+
+Linear Hash: The rst p lines of this output le will represent the p slots of the hash table. In the beginning of each line will be the index of that slot (0 through p 1) followed by a \:". Then for each slot, print the element in that slot if there is one.
+
+Next, print the sequence of probes made for key k1 in a single line with space delimiter.
+
+Double Hash The rst p lines of this output le will represent the p slots of the hash table. In the beginning of each line will be the index of that slot (0 through p 1) followed by a \:". Then for each slot, print the element in that slot if there is one.
+
+Next, print the sequence of probes made for key k1 in a single line with space delimiter.

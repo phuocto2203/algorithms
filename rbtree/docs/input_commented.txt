@@ -1,0 +1,9 @@
+5 /*N: In the original red-black tree, there are 5 data-bearing points.*/
+1 5 /*color value*/
+1 0
+0 10
+1 8
+1 12
+2 /*C: Number of insertions.*/
+7 /*value*/
+6
