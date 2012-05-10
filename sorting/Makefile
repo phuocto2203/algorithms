@@ -1,7 +1,7 @@
 # Makefile for sorting algorithms
 
 CC = g++
-FLAGS = -g -Wall
+FLAGS = -g -O0 -Wall
 OBJS = Sorting.o main.o
 
 sorting: $(OBJS)
@@ -9,9 +9,11 @@ sorting: $(OBJS)
 
 Sorting.o: Sorting.cpp
 	$(CC) $(FLAGS) -c Sorting.cpp -o bin/$@
-	
+
 main.o: main.cpp
 	$(CC) $(FLAGS) -c main.cpp -o bin/$@
 
+.PHONY: clean
 clean:
-	rm -f *.gch bin/* *~ \#*
+	rm -f bin/sorting
+	rm -f bin/*.o
