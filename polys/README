@@ -1,0 +1,14 @@
+Simple Polynomial Program
+Ramsey Kant
+
+A simple program that can add, subtract, multiply, and divide Polynomials
+
+Specifications:
+See specifications.pdf for detailed requirements of the program and format
+of input and output files
+
+Test Cases:
+A set of test cases are available in the tests folder.
+Example:
+input file: testfile1.txt
+expected output: testfile1output.txt

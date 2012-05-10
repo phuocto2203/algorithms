@@ -1,0 +1,2 @@
+#!/bin/bash
+./bin/compute-poly testfile1.txt output.txt
