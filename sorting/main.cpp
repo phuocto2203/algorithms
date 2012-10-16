@@ -14,10 +14,12 @@ int main() {
 	int *mtest = new int[ARR_LEN];
 	int *itest = new int[ARR_LEN];
 	int *irtest = new int[ARR_LEN];
+	int *stest = new int[ARR_LEN];
 	algs.initRandArray(qtest, ARR_LEN, 0, 100);
 	algs.initRandArray(mtest, ARR_LEN, 0, 100);
 	algs.initRandArray(itest, ARR_LEN, 0, 100);
 	algs.initRandArray(irtest, ARR_LEN, 0, 100);
+	algs.initRandArray(stest, ARR_LEN, 0, 100);
 	
 	cout << "Sorting Algorithms" << endl;
 	
@@ -54,10 +56,19 @@ int main() {
 	algs.printArray(irtest, ARR_LEN);
 	cout << endl;
 	
+	// Selection Sort
+	cout << "Selection: ";
+	algs.printArray(stest, ARR_LEN);
+	algs.selectionSort(stest, ARR_LEN);
+	cout << "Result: ";
+	algs.printArray(stest, ARR_LEN);
+	cout << endl;
+	
 	delete qtest;
 	delete mtest;
 	delete itest;
 	delete irtest;
+	delete stest;
 	
 	return 0;
 }

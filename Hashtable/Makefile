@@ -1,8 +1,7 @@
 # Makefile for hashtable program
 
 CC = g++
-# -g flag is for gdb info
-FLAGS = -g -Wall
+FLAGS = -g -O0 -Wall
 OBJS = LList.o HTable.o main.o
 
 all: $(OBJS)
@@ -17,5 +16,7 @@ LList.o: LList.cpp
 main.o: main.cpp
 	$(CC) $(FLAGS) -c main.cpp -o bin/$@
 
+.PHONY: clean
 clean:
-	rm -f *.gch bin/* *~ \#*
+	rm -f bin/sorting
+	rm -f bin/*.o

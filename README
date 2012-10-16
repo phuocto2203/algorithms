@@ -6,9 +6,11 @@ https://github.com/RamseyK
 A collection of algorithms I've implemented for a class or for pleasure in C++
 
 Algorthms so far:
--Merge Sort
--Insertion Sort
--Quick Sort
 -Hashtable
 -Red Black Tree
+-Sorting: Insertion, Merge, Quick, Selection
+-Polynomial operations
+-Set
 -strstr
+
+License: See LICENSE.TXT

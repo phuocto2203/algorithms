@@ -31,6 +31,10 @@ public:
 	void recursiveInsertionSort(int* arr, int len);
 	void recursiveInsert(int* arr, int len);
 	
+	// Selection
+	// Worst: O(n^2)
+	void selectionSort(int* arr, int len);
+	
 	// Utility
 	void swap(int* arr, int a, int b);
 	void initRandArray(int* arr, int len, int low, int high);

@@ -101,14 +101,18 @@ void Sorting::merge(int* arr, int low, int high) {
 	delete temp;
 }
 
-///
-// Insertion Sort
-
+/**
+ * Insertion Sort
+ * Idea: Left side of the array is considered 'sorted' whereas the rightside is 'unsorted'.
+ * Starting at the 2nd element in the array (the key), look at all elements to the left. Any elements greater than the key
+ * are shifted one position to the right of the key. The leftover space becomes the correct position for the key at that time
+ * The next element in the array becomes the new key and the process is repeated
+ */
 void Sorting::insertionSort(int* arr, int len) {
 	if(len < 2)
 		return;
 
-	// Start looping through the array at the 2nd element, from the left
+	// Loop through the array starting at the 2nd element (left side of the array will be considered 'sorted')
 	for(int i = 1; i < len; i++) {
 		int key = arr[i], j = i-1;
 
@@ -118,7 +122,7 @@ void Sorting::insertionSort(int* arr, int len) {
 			j--;
 		}
 
-		// j+1 is now the correct position for the key
+		// Insert the key at j+1 (the correct space, after shifting all greater elements to the right)
 		arr[j+1] = key;
 	}
 }
@@ -140,6 +144,25 @@ void Sorting::recursiveInsert(int* arr, int k) {
 		i--; // Decrement index
 	}
 	arr[i+1] = key; // Found the correct position for the key
+}
+
+/**
+ * Selection Sort
+ * Idea: Array is divided into sorted (on left) and unsorted (right). For every iteration, the smallest element in the unsorted portion of the
+ * array is found and added to the sorted portion of the array
+ */
+void Sorting::selectionSort(int* arr, int len) {
+	int minIdx = 0;
+	for(int i = 0; i < len-1; i++) {
+		// Find the smallest element in the unsorted portion of the array
+		for(int j = i+1; j < len; j++) {
+			if(arr[j] < arr[minIdx])
+				minIdx = j;
+		}
+		
+		// Now swap the smallest element to the end of the sorted portion (i represents the end of the sorted portion)
+		swap(arr, minIdx, i);
+	}
 }
 
 // Exchange the values at indexes a and b

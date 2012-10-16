@@ -41,6 +41,10 @@ private:
 	
 	void generatePreorder(Node* x);
 
+	// Binary Tree removal methods
+	void BTremove(Node* n);
+	void BTremove(int data);
+
 public:
 	RBTree();
 	~RBTree();

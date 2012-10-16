@@ -1,8 +1,7 @@
 # Makefile for red black tree program
 
 CC = g++
-# -g flag is for gdb info
-FLAGS = -g -Wall
+FLAGS = -g -O0 -Wall
 OBJS = RBTree.o main.o
 
 all: $(OBJS)
@@ -14,5 +13,7 @@ RBTree.o: RBTree.cpp
 main.o: main.cpp
 	$(CC) $(FLAGS) -c main.cpp -o bin/$@
 
+.PHONY: clean
 clean:
-	rm -f *.gch bin/* *~ \#*
+	rm -f bin/sorting
+	rm -f bin/*.o

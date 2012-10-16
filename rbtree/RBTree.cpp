@@ -68,36 +68,38 @@ Node* RBTree::insert(int data) {
 		gp = getGrandparent(n);
 		if(n->parent == gp->left) {
 			y = gp->right;
-			if(y->color == RED) { // Case 1: Uncle and Parent colors are the same
+			if(y->color == RED) { // Case 1: Uncle is Red
 				n->parent->color = BLACK;
 				y->color = BLACK;
 				gp->color = RED;
 				n = gp;
 			} else {
-				// Case 2: Change line into a pyramid / mountain
-				if(n == n->parent->right) { // Stretch out into a straight line
+				// Case 2: Uncle is Black, n is a right child of a left child
+				// Stretch out into a straight line (transforms into case 3)
+				if(n == n->parent->right) {
 					n = n->parent;
 					rotateLeft(n);
 				}
-				// Case 3:
+				// Case 3: Uncle is Black, n is a left child of a left child
 				n->parent->color = BLACK;
 				gp->color = RED;
 				rotateRight(gp);
 			}
 		} else { // When n->parent == gp->right
+			// Same as above except swap 'left' and 'right'. Symmetric
 			y = gp->left;
-			if(y->color == RED) {
+			if(y->color == RED) { // Case 4
 				n->parent->color = BLACK;
 				y->color = BLACK;
 				gp->color = RED;
 				n = gp;
 			} else {
-				// Case 5:
+				// Case 5
 				if(n == n->parent->left) {
 					n = n->parent;
 					rotateRight(n);
 				}
-				// Case 6:
+				// Case 6
 				n->parent->color = BLACK;
 				gp->color = RED;
 				rotateLeft(gp);
