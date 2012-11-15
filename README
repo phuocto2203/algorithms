@@ -1,11 +1,10 @@
-Algorithms
+Algorithms and Data Structures
 Ramsey Kant
 
 https://github.com/RamseyK
 
-A collection of algorithms I've implemented for a class or for pleasure in C++
+A collection of algorithms and data structures implemented in C/C++
 
-Algorthms so far:
 -Hashtable
 -Red Black Tree
 -Sorting: Insertion, Merge, Quick, Selection
